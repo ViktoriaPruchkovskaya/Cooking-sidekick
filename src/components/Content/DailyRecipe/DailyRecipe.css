@@ -1,0 +1,9 @@
+.slide {
+    text-align: center;
+    width: 45rem;
+    height: 15rem;
+    line-height: 12rem;
+    background: #364d79;
+    /* overflow: hidden; */
+  }
+  

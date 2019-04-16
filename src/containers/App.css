@@ -1,0 +1,16 @@
+.App {
+  padding: 1rem 10rem;
+}
+
+.class{
+  display: flex;
+  flex-direction: column;
+}
+ .spacing{
+   margin-bottom: 1rem
+ }
+
+ .center{
+  position: relative;
+  left:20rem
+ }
