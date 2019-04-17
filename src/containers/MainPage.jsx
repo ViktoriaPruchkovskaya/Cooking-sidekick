@@ -16,9 +16,7 @@ const MainPage = () => {
         <Col span={6}>
           <Col span={4}>
             <Affix>
-              <Link to="/login">
-                <AuthBtn />
-              </Link>
+              <AuthBtn />
               <Menu />
               <IngridientSearch />
             </Affix>

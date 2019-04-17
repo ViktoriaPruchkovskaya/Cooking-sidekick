@@ -1,7 +1,8 @@
 import React from 'react';
+import MenuLayout from '../layouts/menuLayout'
 
 const linkContext = React.createContext({
-    path: ""
+     layout : MenuLayout
 })
 
 export default linkContext;
