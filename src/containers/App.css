@@ -2,15 +2,15 @@
   padding: 1rem 10rem;
 }
 
-.class{
+.class {
   display: flex;
   flex-direction: column;
 }
- .spacing{
-   margin-bottom: 1rem
- }
+.spacing {
+  margin-bottom: 1rem;
+}
 
- .center{
+.center {
   position: relative;
-  left:20rem
- }
+  left: 20rem;
+}

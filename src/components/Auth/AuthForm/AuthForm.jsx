@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import { Form, Modal, Input, Icon } from "antd";
 
 class AuthForm extends Component {
-
   render() {
-  
     const { visible, onCancel, onCreate, form } = this.props;
     const { getFieldDecorator } = form;
     return (

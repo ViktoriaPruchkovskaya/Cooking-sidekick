@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from 'react-router-dom';
+import { withRouter } from "react-router-dom";
 import { Button } from "antd";
 import WrappedAuthForm from "./AuthForm/AuthForm";
 
@@ -14,7 +14,7 @@ class AuthBtn extends Component {
 
   handleCancel = () => {
     this.setState({ visible: false });
-    this.props.history.push('/');
+    this.props.history.push("/");
   };
 
   handleCreate = () => {

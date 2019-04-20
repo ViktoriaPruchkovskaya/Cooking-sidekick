@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import { Link } from "react-router-dom";
-import { Row, Col, Affix } from "antd";
+import { Row, Col, Affix} from "antd";
+
 import Menu from "../components/Menu/Menu";
 import IngridientSearch from "../components/Menu/IngridientSearch/IngridientSearch";
 import DailyRecipe from "../components/Content/DailyRecipe/DailyRecipe";
@@ -18,16 +18,15 @@ const MainPage = () => {
             <Affix>
               <AuthBtn />
               <Menu />
-              <IngridientSearch />
+              <IngridientSearch /> 
             </Affix>
           </Col>
         </Col>
-        <Col span={18} >
+        <Col span={18}>
           <DailyRecipe />
           <Cards className="center" />
         </Col>
       </Row>
-      {/* <Route path="/recipe" component={Recipe} /> */}
     </div>
   );
 };

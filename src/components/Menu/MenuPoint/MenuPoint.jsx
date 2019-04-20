@@ -13,7 +13,7 @@ const MenuPoint = ({ name, items }) => {
       >
         {name}
       </Button>
-        {isShowed ? <MenuList subpoints={items} /> : null}
+      {isShowed ? <MenuList subpoints={items} /> : null}
     </div>
   );
 };
