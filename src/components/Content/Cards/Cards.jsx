@@ -111,7 +111,7 @@ const Cards = () => {
   ];
 
   return cardsData.map(cardData => (
-    <Col key={cardData.id} span={7}>
+    <Col key={cardData.id} span={8}>
       <Link to="/recipe">
         <RecipeCard
           title={cardData.title}

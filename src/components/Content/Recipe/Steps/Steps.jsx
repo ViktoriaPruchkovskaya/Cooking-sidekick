@@ -17,8 +17,8 @@ const Steps = () => {
     }
   ];
 
-  const recipeSteps = directions.map(steps => {
-    return <Step step={steps.description} />;
+  const recipeSteps = directions.map((steps, index) => {
+    return <Step key={index} step={steps.description} />;
   });
   return <ol className="steps">{recipeSteps}</ol>;
 };

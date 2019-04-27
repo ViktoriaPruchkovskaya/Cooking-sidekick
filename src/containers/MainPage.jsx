@@ -1,12 +1,14 @@
 import React from "react";
-import "./App.css";
-import { Row, Col, Affix} from "antd";
+import { withRouter } from "react-router-dom";
+// import "./App.css";
+import { Row, Col, Affix, Divider } from "antd";
 
 import Menu from "../components/Menu/Menu";
 import IngridientSearch from "../components/Menu/IngridientSearch/IngridientSearch";
 import DailyRecipe from "../components/Content/DailyRecipe/DailyRecipe";
 import Cards from "../components/Content/Cards/Cards";
 import AuthBtn from "../components/Auth/AuthBtn";
+import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
 
 const MainPage = () => {
   return (
@@ -14,21 +16,23 @@ const MainPage = () => {
       <h1>My new project</h1>
       <Row>
         <Col span={6}>
-          <Col span={4}>
+          <Col span={5}>
             <Affix>
+              <Breadcrumbs/>
               <AuthBtn />
               <Menu />
-              <IngridientSearch /> 
+              <IngridientSearch />
             </Affix>
           </Col>
         </Col>
-        <Col span={18}>
+        <Col span={16}>
           <DailyRecipe />
-          <Cards className="center" />
+          <Divider>Daily Recipe</Divider>
+          <Cards/>
         </Col>
       </Row>
     </div>
   );
 };
 
-export default MainPage;
+export default withRouter(MainPage);

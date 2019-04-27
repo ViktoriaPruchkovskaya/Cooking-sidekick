@@ -29,8 +29,7 @@ const RecipeCard = props => {
         ]}
         hoverable={true}
       >
-        <Meta title={props.title} description={props.description} />{" "}
-        {/*{[{}]}*/}
+        <Meta title={props.title} description={props.description} />
       </Card>
     </div>
   );

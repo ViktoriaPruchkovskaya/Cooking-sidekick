@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <Router>
         <Route exact path="/" component={MainPage} />
-        <Route exact path="/recipe" component={Recipe} />
+        <Route path="/recipe" component={Recipe} />
       </Router>
     );
   }

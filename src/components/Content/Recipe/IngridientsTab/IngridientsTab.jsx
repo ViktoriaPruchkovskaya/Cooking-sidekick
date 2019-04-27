@@ -14,7 +14,6 @@ const IngridientsTab = () => {
       title: "Quantity",
       dataIndex: "quantity",
       width: 150
-
     }
   ];
   const data = [
@@ -25,7 +24,7 @@ const IngridientsTab = () => {
     },
     {
       key: "2",
-      ingridient: "1 cup white sugar",
+      ingridient: "white sugar",
       quantity: "1 cup"
     },
     {
@@ -40,22 +39,22 @@ const IngridientsTab = () => {
     },
     {
       key: "5",
-      ingridient: " flour",
+      ingridient: "flour",
       quantity: " 3 cups"
     },
     {
       key: "6",
-      ingridient: "  salt",
+      ingridient: "salt",
       quantity: " 1 teaspoon"
     },
     {
       key: "7",
-      ingridient: "   baking soda",
+      ingridient: "baking soda",
       quantity: "1/2 teaspoon"
     },
     {
       key: "8",
-      ingridient: "  colored sugar ",
+      ingridient: "colored sugar ",
       quantity: "1/3 cup"
     }
   ];
