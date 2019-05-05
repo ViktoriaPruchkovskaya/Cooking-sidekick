@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Row, Col, Affix, Divider } from "antd";
 
@@ -11,6 +11,20 @@ import IngridientsTab from "../components/Content/Recipe/IngridientsTab/Ingridie
 import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
 
 const Recipe = () => {
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      console.log("request is sent");
+      const response = await fetch("api/recipes");
+      const parsed_response = await response.json();
+      console.log(parsed_response);
+      setRecipes(parsed_response);
+    }
+
+    fetchData();
+  }, []);
+
   return (
     <div className="App">
       <h1>Recipe</h1>
@@ -26,14 +40,18 @@ const Recipe = () => {
           </Col>
         </Col>
         <Col span={18}>
-          <Divider orientation="left" style={{ fontSize: 30 }}>
-            Recipe Title
-          </Divider>
-          <Pic />
-          <Divider dashed />
-          <IngridientsTab />
-          <Divider dashed />
-          <Steps />
+          {recipes.map(recipe => (
+            <React.Fragment key={recipe.id}>
+              <Divider orientation="left" style={{ fontSize: 30 }}>
+                {recipe.title}
+              </Divider>
+              <Pic picture={recipe.pic} />
+              <Divider dashed />
+              <IngridientsTab ingridients={recipe.Ingridients} />
+              <Divider dashed />
+              <Steps steps={recipe.Steps} />
+            </React.Fragment>
+          ))}
         </Col>
       </Row>
     </div>

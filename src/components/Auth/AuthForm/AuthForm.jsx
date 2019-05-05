@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Form, Modal, Input, Icon } from "antd";
+import { Link } from "react-router-dom";
+
 
 class AuthForm extends Component {
   render() {
-    const { visible, onCancel, onCreate, form } = this.props;
+    const { visible, onCancel, onSubmit, form } = this.props;
     const { getFieldDecorator } = form;
     return (
       <Modal
@@ -11,7 +13,7 @@ class AuthForm extends Component {
         title="Authorization"
         okText="Login"
         onCancel={onCancel}
-        onOk={onCreate}
+        onOk={onSubmit}
       >
         <Form onSubmit={this.handleSubmit} className="login-form">
           <Form.Item>
@@ -42,6 +44,9 @@ class AuthForm extends Component {
                 placeholder="Password"
               />
             )}
+            <p>
+              Or <Link to="/registration">register now!</Link>
+            </p>
           </Form.Item>
         </Form>
       </Modal>

@@ -17,7 +17,7 @@ class AuthBtn extends Component {
     this.props.history.push("/");
   };
 
-  handleCreate = () => {
+  handleSubmit = () => {
     const form = this.formRef.props.form;
     form.validateFields((err, values) => {
       if (err) {
@@ -43,7 +43,8 @@ class AuthBtn extends Component {
           wrappedComponentRef={this.saveFormRef}
           visible={this.state.visible}
           onCancel={this.handleCancel}
-          onCreate={this.handleCreate}
+          onCreate={this.handleSubmit}
+          onClick={this.showModal}
         />
       </div>
     );

@@ -2,6 +2,7 @@
   "name": "cooking-sidekick",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8080",
   "dependencies": {
     "antd": "^3.16.1",
     "react": "^16.8.4",
@@ -17,7 +18,12 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "plugins": ["react-hooks"],
+    "rules": {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn"
+    }
   },
   "browserslist": [
     ">0.2%",
@@ -27,7 +33,9 @@
   ],
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^1.6.0"
+  },
   "author": "Vika Pruchkovskaya",
   "license": "ISC"
 }
