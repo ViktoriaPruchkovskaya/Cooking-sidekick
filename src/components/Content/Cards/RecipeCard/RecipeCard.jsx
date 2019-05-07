@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import withClass from "../../../../hoc/withClass";
-import "./RecipeCard";
+import { withRouter } from "react-router-dom";
 import { Card, Icon } from "antd";
+import "./RecipeCard.css";
 
 const { Meta } = Card;
 
@@ -25,6 +25,10 @@ const RecipeCard = props => {
             theme={heartTheme}
             twoToneColor={heartColor}
             onClick={() => setShowFav(!showFav)}
+          />,
+          <Icon
+            type="more"
+            onClick={() => props.history.push("/recipe/" + props.position)}
           />
         ]}
         hoverable={true}
@@ -35,4 +39,4 @@ const RecipeCard = props => {
   );
 };
 
-export default withClass(RecipeCard, "spacing");
+export default withRouter(RecipeCard);

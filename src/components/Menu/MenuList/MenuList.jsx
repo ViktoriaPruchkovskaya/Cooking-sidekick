@@ -2,11 +2,11 @@ import React from "react";
 import ListItem from "./ListItem";
 import "./MenuList.css";
 
-const MenuList = ({ subpoints }) => {
+const MenuList = ({ subpoints, setFilter }) => {
   const elements = subpoints.map(subpoint => {
     return (
       <li key={subpoint.id}>
-        <ListItem label={subpoint.name} path={subpoint.path} />
+        <ListItem label={subpoint.name} query={subpoint.query} setFilter={setFilter} />
       </li>
     );
   });

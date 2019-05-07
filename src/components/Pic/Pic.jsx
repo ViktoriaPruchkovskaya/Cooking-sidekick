@@ -1,11 +1,10 @@
 import React from "react";
 
-const Pic = ({picture}) => {
+const Pic = ({img}) => {
   return (
     <img
-      style={{ width: 500 }}
       alt=""
-      src={picture}
+      src={img}
     />
   );
 };

@@ -14,3 +14,7 @@
   position: relative;
   left: 20rem;
 }
+
+.ant-col-5{
+  width: 10rem !important
+}

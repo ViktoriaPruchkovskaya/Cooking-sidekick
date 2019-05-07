@@ -1,8 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Button } from "antd";
 
 const ListItem = props => {
-  return <Link to={props.path}>{props.label}</Link>;
+  return <Button onClick={() => { console.log(props.query); props.setFilter(props.query); }}>{props.label}</Button>;
 };
 
 export default ListItem;

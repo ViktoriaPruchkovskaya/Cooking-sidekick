@@ -4,29 +4,50 @@ const MenuLayout = [
     id: shortid.generate(),
     name: "Category",
     items: [
-      { id: shortid.generate(), name: "Breakfast", path: "/breakfast" },
-      { id: shortid.generate(), name: "Desserts", path: "/desserts" },
-      { id: shortid.generate(), name: "Dinners", path: "/dinners" },
-      { id: shortid.generate(), name: "Lunch", path: "/lunch" }
+      {
+        id: shortid.generate(),
+        name: "Starter",
+        query: {category: 1}
+      },
+      {
+        id: shortid.generate(),
+        name: "Satad",
+        query: { category: 2 }
+      },
+      {
+        id: shortid.generate(),
+        name: "Main course",
+        query: { category: 3 }
+      },
+      {
+        id: shortid.generate(),
+        name: "Soup",
+        query: { category: 4 }
+      },
+      {
+        id: shortid.generate(),
+        name: "Dessert",
+        query: { category: 5 }
+      }
     ]
   },
   {
     id: shortid.generate(),
     name: "Origin",
     items: [
-      { id: shortid.generate(), name: "Chinese", path: "/chinese" },
-      { id: shortid.generate(), name: "Indian", path: "/indian" },
-      { id: shortid.generate(), name: "Italian", path: "/italian" },
-      { id: shortid.generate(), name: "Mexican", path: "/mexican" }
+      { id: shortid.generate(), name: "Chinese", query: "/chinese" },
+      { id: shortid.generate(), name: "Indian", query: "/indian" },
+      { id: shortid.generate(), name: "Italian", query: "/italian" },
+      { id: shortid.generate(), name: "Mexican", query: "/mexican" }
     ]
   },
   {
     id: shortid.generate(),
     name: "Difficulty",
     items: [
-      { id: shortid.generate(), name: "Easy", path: "/easy" },
-      { id: shortid.generate(), name: "Medium", path: "/medium" },
-      { id: shortid.generate(), name: "Hard", path: "/hard" }
+      { id: shortid.generate(), name: "Easy", query: "/easy" },
+      { id: shortid.generate(), name: "Medium", query: "/medium" },
+      { id: shortid.generate(), name: "Hard", query: "/hard" }
     ]
   }
 ];

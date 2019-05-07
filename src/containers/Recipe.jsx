@@ -11,15 +11,17 @@ import IngridientsTab from "../components/Content/Recipe/IngridientsTab/Ingridie
 import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
 
 const Recipe = () => {
-  const [recipes, setRecipes] = useState([]);
+  const [recipe, setRecipe] = useState([]);
+
 
   useEffect(() => {
     async function fetchData() {
+      const action = window.location.pathname.split("/").slice(-1)[0];
       console.log("request is sent");
-      const response = await fetch("api/recipes");
+      const response = await fetch(`/api/recipe/${action}`);
       const parsed_response = await response.json();
       console.log(parsed_response);
-      setRecipes(parsed_response);
+      setRecipe(parsed_response);
     }
 
     fetchData();
@@ -27,10 +29,10 @@ const Recipe = () => {
 
   return (
     <div className="App">
-      <h1>Recipe</h1>
+      {/* <h1>Recipe</h1> */}
       <Row>
         <Col span={6}>
-          <Col span={4}>
+          <Col span={5}>
             <Affix>
               <Breadcrumbs />
               <AuthBtn />
@@ -40,16 +42,17 @@ const Recipe = () => {
           </Col>
         </Col>
         <Col span={18}>
-          {recipes.map(recipe => (
-            <React.Fragment key={recipe.id}>
+          {recipe.map(recipeItem => (
+            <React.Fragment key={recipeItem.id}>
               <Divider orientation="left" style={{ fontSize: 30 }}>
-                {recipe.title}
+                {recipeItem.title}
               </Divider>
-              <Pic picture={recipe.pic} />
+              <Pic img={recipeItem.pic} style={{ width: 500 }} />
+              <p>{recipeItem.description}</p>
               <Divider dashed />
-              <IngridientsTab ingridients={recipe.Ingridients} />
+              <IngridientsTab ingridients={recipeItem.Ingridients} />
               <Divider dashed />
-              <Steps steps={recipe.Steps} />
+              <Steps steps={recipeItem.Steps} />
             </React.Fragment>
           ))}
         </Col>

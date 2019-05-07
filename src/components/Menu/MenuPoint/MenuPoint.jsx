@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "antd/lib/button";
 import MenuList from "../MenuList/MenuList";
 
-const MenuPoint = ({ name, items }) => {
+const MenuPoint = ({ name, items, setFilter }) => {
   const [isShowed, setShowed] = useState(false);
   return (
     <div>
@@ -13,7 +13,7 @@ const MenuPoint = ({ name, items }) => {
       >
         {name}
       </Button>
-      {isShowed ? <MenuList subpoints={items} /> : null}
+      {isShowed ? <MenuList subpoints={items} setFilter={setFilter}/> : null}
     </div>
   );
 };
