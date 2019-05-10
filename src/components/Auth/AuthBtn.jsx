@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { Button } from "antd";
 import WrappedAuthForm from "./AuthForm/AuthForm";
+import { request } from "http";
 
 class AuthBtn extends Component {
   state = {
@@ -22,8 +23,18 @@ class AuthBtn extends Component {
     form.validateFields((err, values) => {
       if (err) {
         return;
+      } else {
+        fetch("/api/login", {
+          credentials: "include",
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json"
+          },
+          body: form
+        });
       }
-
+      console.log(request.body);
       form.resetFields();
       this.setState({ visible: false });
     });

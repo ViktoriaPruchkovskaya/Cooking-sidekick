@@ -4,7 +4,7 @@ import "./App.css";
 import { Row, Col, Affix, Divider } from "antd";
 
 import Menu from "../components/Menu/Menu";
-import IngridientSearch from "../components/Menu/IngridientSearch/IngridientSearch";
+import IngredientSearch from "../components/Menu/IngredientSearch/IngredientSearch";
 import DailyRecipe from "../components/Content/DailyRecipe/DailyRecipe";
 import Cards from "../components/Content/Cards/Cards";
 import AuthBtn from "../components/Auth/AuthBtn";
@@ -12,6 +12,7 @@ import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
 
 const MainPage = () => {
   const [recipes, setList] = useState([]);
+  const [slider, setSlider] = useState([]);
   const [filter, setFilter] = useState({});
 
   useEffect(() => {
@@ -21,8 +22,11 @@ const MainPage = () => {
       url.search = new URLSearchParams(filter);
       const response = await fetch(url);
       const parsed_response = await response.json();
-      console.log(parsed_response);
+      // console.log(parsed_response);
       setList(parsed_response);
+      const dailyResponse = await fetch("/api/dailyRecipe");
+      const parsed_dailyRecipe = await dailyResponse.json();
+      setSlider(parsed_dailyRecipe);
     }
 
     fetchData();
@@ -30,20 +34,19 @@ const MainPage = () => {
 
   return (
     <div className="App">
-      {/* <h1>My new project</h1> */}
       <Row>
         <Col span={6}>
           <Col span={5}>
             <Affix>
               <Breadcrumbs />
               <AuthBtn />
-              <Menu setFilter={setFilter}/>
-              <IngridientSearch />
+              <Menu setFilter={setFilter} />
+              <IngredientSearch />
             </Affix>
           </Col>
         </Col>
         <Col span={16}>
-          <DailyRecipe />
+          <DailyRecipe slider={slider} />
           <Divider>Daily Recipe</Divider>
           <Cards list={recipes} />
         </Col>

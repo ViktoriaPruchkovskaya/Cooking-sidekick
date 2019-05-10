@@ -7,11 +7,11 @@ const MenuLayout = [
       {
         id: shortid.generate(),
         name: "Starter",
-        query: {category: 1}
+        query: { category: 1 }
       },
       {
         id: shortid.generate(),
-        name: "Satad",
+        name: "Salad",
         query: { category: 2 }
       },
       {
@@ -35,19 +35,19 @@ const MenuLayout = [
     id: shortid.generate(),
     name: "Origin",
     items: [
-      { id: shortid.generate(), name: "Chinese", query: "/chinese" },
-      { id: shortid.generate(), name: "Indian", query: "/indian" },
-      { id: shortid.generate(), name: "Italian", query: "/italian" },
-      { id: shortid.generate(), name: "Mexican", query: "/mexican" }
+      { id: shortid.generate(), name: "Chinese", query: { origin: 1 } },
+      { id: shortid.generate(), name: "Italian", query: { origin: 2 } },
+      { id: shortid.generate(), name: "European", query: { origin: 3 } },
+      { id: shortid.generate(), name: "French", query: { origin: 4 } }
     ]
   },
   {
     id: shortid.generate(),
     name: "Difficulty",
     items: [
-      { id: shortid.generate(), name: "Easy", query: "/easy" },
-      { id: shortid.generate(), name: "Medium", query: "/medium" },
-      { id: shortid.generate(), name: "Hard", query: "/hard" }
+      { id: shortid.generate(), name: "Easy", query: { difficulty: 1 } },
+      { id: shortid.generate(), name: "Medium", query: { difficulty: 2 } },
+      { id: shortid.generate(), name: "Hard", query: { difficulty: 3 } }
     ]
   }
 ];

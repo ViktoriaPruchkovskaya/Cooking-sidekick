@@ -26,6 +26,7 @@ class AuthForm extends Component {
                 prefix={
                   <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
                 }
+                type="username"
                 placeholder="Username"
               />
             )}

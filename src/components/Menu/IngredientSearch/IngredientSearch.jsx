@@ -1,11 +1,11 @@
-import React from "react";
+import React, { Component, useState } from "react";
 import { TreeSelect } from "antd";
 
 const SHOW_PARENT = TreeSelect.SHOW_PARENT;
 
 const treeData = [
   {
-    title: "Beef",
+    title: "Shrimp",
     value: "0-0",
     key: "0-0"
   },
@@ -26,13 +26,12 @@ const treeData = [
   }
 ];
 
-class IngridientSearch extends React.Component {
+class IngridientSearch extends Component {
   state = {
     value: undefined
   };
 
   onChange = value => {
-    console.log("onChange ", value);
     this.setState({ value });
   };
 
@@ -43,7 +42,7 @@ class IngridientSearch extends React.Component {
       onChange: this.onChange,
       treeCheckable: true,
       showCheckedStrategy: SHOW_PARENT,
-      searchPlaceholder: "Select ingridient",
+      searchPlaceholder: "Select ingredient",
       style: {
         width: 250
       }
@@ -51,5 +50,25 @@ class IngridientSearch extends React.Component {
     return <TreeSelect {...tProps} />;
   }
 }
+
+// const IngridientSearch = () => {
+//   const [value, setValue] = useState({ undefined });
+//   // onClick = value => {
+//   //   console.log("onChange ", value);
+//   //   setValue({ value });
+//   // };
+//   const tProps = {
+//     treeData,
+//     value: value,
+//     onChange: setValue({value}),
+//     treeCheckable: true,
+//     showCheckedStrategy: SHOW_PARENT,
+//     searchPlaceholder: "Select ingridient",
+//     style: {
+//       width: 250
+//     }
+//   };
+//   return <TreeSelect {...tProps} />;
+// };
 
 export default IngridientSearch;

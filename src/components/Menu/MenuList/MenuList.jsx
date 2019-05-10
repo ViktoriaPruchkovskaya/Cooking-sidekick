@@ -5,7 +5,7 @@ import "./MenuList.css";
 const MenuList = ({ subpoints, setFilter }) => {
   const elements = subpoints.map(subpoint => {
     return (
-      <li key={subpoint.id}>
+      <li key={subpoint.id} className = "links">
         <ListItem label={subpoint.name} query={subpoint.query} setFilter={setFilter} />
       </li>
     );

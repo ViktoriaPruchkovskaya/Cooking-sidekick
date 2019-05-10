@@ -3,4 +3,11 @@
   width: 45rem;
   height: 15rem;
   line-height: 12rem;
+  position: relative;
 }
+
+.slide h1 {
+  color: #fff;
+  position: relative;
+}
+

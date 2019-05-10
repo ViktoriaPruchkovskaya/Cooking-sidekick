@@ -1,22 +1,23 @@
 import React from "react";
 import "./DailyRecipe.css";
 import { Carousel } from "antd";
-const DailyRecipe = () => {
-  return (
-    <Carousel autoplay>
-      <div className="slide">
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1487376480913-24046456a727?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-        />
-      </div>
+import { Link } from "react-router-dom";
+import Pic from "../../Pic/Pic";
 
-      <div className="slide">
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-        />
-      </div>
+const style = { width: "70em", height: "21em", position:"absolute" };
+
+const DailyRecipe = ({ slider }) => {
+  const elements = slider.map((slide, index) => {
+    return (
+      <Link to={("/recipe/" + slide.id)} key={index} className="slide">
+        <Pic img={slide.pic} style={style} />
+        <h1>{slide.title}</h1>
+      </Link>
+    );
+  });
+  return (
+    <Carousel autoplay >
+      {elements}
     </Carousel>
   );
 };

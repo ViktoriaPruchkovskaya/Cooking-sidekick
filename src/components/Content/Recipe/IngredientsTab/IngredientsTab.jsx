@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Table } from "antd";
 
-const IngridientsTab = ({ingridients}) => {
+const IngredientsTab = ({ ingredients }) => {
   const [setSelectedRowKeys] = useState([]);
 
   const columns = [
     {
-      title: "Ingridient",
+      title: "Ingredient",
       dataIndex: "name",
       width: 150
     },
@@ -21,7 +21,7 @@ const IngridientsTab = ({ingridients}) => {
     <Table
       rowSelection={selectedRowKeys => setSelectedRowKeys({ selectedRowKeys })}
       columns={columns}
-      dataSource={ingridients}
+      dataSource={ingredients}
       rowKey="id"
       pagination={false}
       scroll={{ y: 225 }}
@@ -29,4 +29,4 @@ const IngridientsTab = ({ingridients}) => {
   );
 };
 
-export default IngridientsTab;
+export default IngredientsTab;
